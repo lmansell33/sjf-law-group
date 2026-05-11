@@ -209,7 +209,7 @@ img { max-width: 100%; height: auto; }
   padding: 28px 24px;
   box-shadow: var(--shadow);
 }
-.pain-card__icon { font-size: 2rem; margin-bottom: 12px; }
+.pain-card__icon { display: flex; margin-bottom: 16px; }
 .pain-card__title {
   font-family: var(--font-serif);
   font-size: 1.1rem;
@@ -239,7 +239,6 @@ img { max-width: 100%; height: auto; }
   background: var(--gold);
   border-radius: 50%;
   display: flex; align-items: center; justify-content: center;
-  font-size: 1.3rem;
 }
 .benefit-item__title {
   font-family: var(--font-serif);
@@ -516,7 +515,7 @@ img { max-width: 100%; height: auto; }
   color: var(--navy);
   font-weight: 600;
 }
-.trust-item__icon { font-size: 1.2rem; }
+.trust-item__icon { display: flex; align-items: center; }
 
 /* ===== SPINNER ===== */
 .spinner {
