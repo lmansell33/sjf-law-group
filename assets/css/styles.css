@@ -244,6 +244,12 @@ img { max-width: 100%; height: auto; }
   font-weight: normal;
 }
 .pain-item__text { font-size: 0.93rem; color: var(--text-mid); line-height: 1.85; }
+.pain-item__solution {
+  font-size: 0.9rem;
+  color: var(--blue);
+  line-height: 1.75;
+  margin-top: 10px;
+}
 
 /* ===== BENEFITS ===== */
 .benefits-section { background: var(--off-white); padding: 96px 0; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
@@ -619,6 +625,15 @@ img { max-width: 100%; height: auto; }
 }
 .faq-header {
   margin-bottom: 48px;
+  text-align: center;
+}
+.faq-headline {
+  font-family: 'Georgia', serif;
+  font-size: clamp(2.2rem, 4vw, 3.2rem);
+  font-weight: normal;
+  color: var(--navy);
+  line-height: 1.15;
+  margin-top: 12px;
 }
 .faq-grid {
   display: grid;
