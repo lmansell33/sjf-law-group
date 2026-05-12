@@ -47,9 +47,9 @@ img { max-width: 100%; height: auto; }
 .header-cta {
   display: inline-block;
   padding: 10px 26px;
-  background: transparent;
+  background: var(--blue);
   border: 1px solid var(--blue);
-  color: var(--blue);
+  color: var(--white);
   font-size: 0.75rem;
   font-weight: 700;
   letter-spacing: 2px;
@@ -57,7 +57,7 @@ img { max-width: 100%; height: auto; }
   text-decoration: none;
   transition: background 0.2s, color 0.2s;
 }
-.header-cta:hover { background: var(--blue); color: var(--white); }
+.header-cta:hover { background: var(--navy); border-color: var(--navy); color: var(--white); }
 
 /* ===== HERO ===== */
 .hero {
