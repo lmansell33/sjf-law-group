@@ -558,23 +558,22 @@ img { max-width: 100%; height: auto; }
 
 /* ===== WHO THIS IS FOR ===== */
 .who-section { background: var(--white); padding: 96px 0; border-top: 1px solid var(--border); }
-.who-grid {
-  display: grid;
-  grid-template-columns: 2fr 3fr;
-  gap: 80px;
-  align-items: start;
-}
-.who-intro {
-  font-size: 0.97rem;
-  color: var(--text-mid);
-  line-height: 1.85;
-  margin-top: 24px;
+.who-header {
   margin-bottom: 40px;
+}
+.who-headline {
+  font-family: 'Georgia', serif;
+  font-size: clamp(2.2rem, 4vw, 3.2rem);
+  font-weight: normal;
+  color: var(--navy);
+  line-height: 1.15;
+  margin-top: 12px;
 }
 .who-callout {
   background: var(--off-white);
   border-left: 3px solid var(--blue);
   padding: 22px 24px;
+  margin-top: 40px;
 }
 .who-callout__label {
   display: flex;
@@ -709,7 +708,6 @@ img { max-width: 100%; height: auto; }
   .benefits-inner { grid-template-columns: 1fr; gap: 48px; }
   .benefits-left { position: static; }
   .tiers-header { grid-template-columns: 1fr; gap: 20px; }
-  .who-grid { grid-template-columns: 1fr; gap: 40px; }
   .faq-answer__inner p { padding-right: 0; }
   .tiers-grid { grid-template-columns: 1fr; grid-template-rows: none; }
   .tier-card { grid-row: auto; display: flex; flex-direction: column; }
