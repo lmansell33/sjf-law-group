@@ -59,6 +59,24 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
+/* ===== FAQ ACCORDION ===== */
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('.faq-question').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const item = btn.closest('.faq-item');
+      const isOpen = item.classList.contains('is-open');
+      document.querySelectorAll('.faq-item.is-open').forEach(el => {
+        el.classList.remove('is-open');
+        el.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+      });
+      if (!isOpen) {
+        item.classList.add('is-open');
+        btn.setAttribute('aria-expanded', 'true');
+      }
+    });
+  });
+});
+
 /* ===== HELPERS ===== */
 function showError(el, msg) {
   el.textContent = msg;
