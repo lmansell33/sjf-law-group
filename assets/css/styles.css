@@ -322,17 +322,20 @@ img { max-width: 100%; height: auto; }
 .tiers-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 24px;
-  align-items: stretch;
+  column-gap: 24px;
+  /* 5 shared row tracks: level | title | subtitle+divider | features | button */
+  grid-template-rows: auto auto auto auto auto;
 }
 .tier-card {
   background: var(--white);
   border: 1px solid var(--border);
   border-top: 3px solid var(--blue);
   padding: 48px 44px;
-  display: flex;
-  flex-direction: column;
   box-shadow: 0 8px 36px rgba(0,0,0,0.35);
+  /* Subgrid: each card spans all 5 shared row tracks */
+  grid-row: span 5;
+  display: grid;
+  grid-template-rows: subgrid;
 }
 .tier-card--featured {
   background: var(--white);
@@ -354,8 +357,18 @@ img { max-width: 100%; height: auto; }
 }
 .tier-card__level { font-size: 0.68rem; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: var(--blue); margin-bottom: 20px; }
 .tier-card__title { font-family: var(--font-serif); font-size: 1.6rem; color: var(--navy); font-weight: normal; margin-bottom: 8px; }
-.tier-card__for { font-size: 0.83rem; color: var(--text-mid); margin-bottom: 36px; padding-bottom: 36px; border-bottom: 1px solid var(--border); line-height: 1.6; min-height: 5rem; display: flex; align-items: flex-start; }
-.tier-card__features { list-style: none; margin-bottom: 40px; flex: 1; }
+.tier-card__for {
+  font-size: 0.83rem;
+  color: var(--text-mid);
+  line-height: 1.6;
+  padding-bottom: 32px;
+  border-bottom: 1px solid var(--border);
+  /* stretch fills the shared row so both cards' divider line sits at the same height */
+  align-self: stretch;
+  display: flex;
+  align-items: flex-start;
+}
+.tier-card__features { list-style: none; padding-top: 32px; align-self: start; }
 .tier-card__features li {
   font-size: 0.88rem;
   color: var(--text-mid);
@@ -368,7 +381,7 @@ img { max-width: 100%; height: auto; }
   align-items: center;
 }
 .tier-card__features li::before { content: '—'; color: var(--blue); flex-shrink: 0; }
-.tier-card .btn-primary { background: var(--blue); color: var(--white); text-align: center; display: block; text-decoration: none; }
+.tier-card .btn-primary { background: var(--blue); color: var(--white); text-align: center; display: block; text-decoration: none; margin-top: 36px; align-self: stretch; }
 .tier-card .btn-primary:hover { background: var(--blue-dark); }
 
 /* ===== TESTIMONIALS ===== */
@@ -565,7 +578,11 @@ img { max-width: 100%; height: auto; }
   .benefits-inner { grid-template-columns: 1fr; gap: 48px; }
   .benefits-left { position: static; }
   .tiers-header { grid-template-columns: 1fr; gap: 20px; }
-  .tiers-grid { grid-template-columns: 1fr; }
+  .tiers-grid { grid-template-columns: 1fr; grid-template-rows: none; }
+  .tier-card { grid-row: auto; display: flex; flex-direction: column; }
+  .tier-card__for { align-self: auto; margin-bottom: 32px; }
+  .tier-card__features { padding-top: 0; flex: 1; margin-bottom: 36px; align-self: auto; }
+  .tier-card .btn-primary { margin-top: 0; }
   .proof-grid { grid-template-columns: 1fr; }
   .cta-grid { grid-template-columns: 1fr; gap: 48px; }
   .cta-form-col { position: static; }
