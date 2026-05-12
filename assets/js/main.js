@@ -73,7 +73,7 @@ function setLoading(btn, loading) {
     btn.innerHTML = '<span class="spinner"></span> Submitting…';
   } else {
     btn.disabled = false;
-    btn.innerHTML = 'Book My Free Consultation &rarr;';
+    btn.innerHTML = 'Schedule My Consultation &rarr;';
   }
 }
 
