@@ -203,7 +203,6 @@ img { max-width: 100%; height: auto; }
 
 /* ===== PAIN SECTION ===== */
 .pain-section { background: var(--white); padding: 96px 0; }
-.pain-headline { font-family: var(--font-serif); font-size: clamp(1.8rem, 3vw, 2.6rem); font-weight: normal; line-height: 1.2; color: var(--navy); }
 .pain-section__header {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -298,7 +297,6 @@ img { max-width: 100%; height: auto; }
 }
 .benefit-row__title { font-family: var(--font-serif); font-size: 1.05rem; color: var(--navy); margin-bottom: 6px; font-weight: normal; }
 .benefit-row__text { font-size: 0.88rem; color: var(--text-mid); line-height: 1.75; }
-.benefits-fee-note { font-size: 0.8rem; color: var(--text-light); line-height: 1.7; margin-top: 28px; padding-top: 24px; border-top: 1px solid var(--border); font-style: italic; }
 
 /* ===== TIERS ===== */
 .tiers-section { background: var(--navy); padding: 96px 0; }
