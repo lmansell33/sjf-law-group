@@ -7,149 +7,162 @@
   <meta name="robots" content="noindex, nofollow" />
   <link rel="stylesheet" href="assets/css/styles.css" />
   <style>
-    .thankyou-page {
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-    }
+    .thankyou-page { min-height: 100vh; display: flex; flex-direction: column; }
     .thankyou-main {
       flex: 1;
-      background: linear-gradient(135deg, var(--navy) 0%, #1e3563 100%);
+      background: #f8f4ec;
       display: flex;
       align-items: center;
-      padding: 72px 24px;
+      padding: 80px 24px;
     }
     .thankyou-card {
-      background: var(--white);
-      border-radius: 14px;
-      padding: 56px 44px;
-      max-width: 620px;
+      background: #fff;
+      border: 1px solid #ddd5c5;
+      padding: 64px 56px;
+      max-width: 640px;
       margin: 0 auto;
-      text-align: center;
-      box-shadow: 0 20px 60px rgba(0,0,0,0.3);
-      border-top: 5px solid var(--gold);
+      border-top: 3px solid #b8902a;
     }
     .thankyou-icon {
-      width: 80px; height: 80px;
-      background: var(--gold);
-      border-radius: 50%;
+      width: 64px; height: 64px;
+      border: 1px solid #b8902a;
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 32px;
+      color: #b8902a;
+    }
+    .thankyou-eyebrow {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: #b8902a;
+      margin-bottom: 16px;
       display: flex;
       align-items: center;
-      justify-content: center;
-      margin: 0 auto 24px;
-      font-size: 2.2rem;
+      gap: 12px;
+    }
+    .thankyou-eyebrow::before {
+      content: '';
+      display: block;
+      width: 24px;
+      height: 1px;
+      background: #b8902a;
     }
     .thankyou-headline {
-      font-family: var(--font-serif);
-      font-size: clamp(1.7rem, 3.5vw, 2.4rem);
-      color: var(--navy);
+      font-family: 'Georgia', serif;
+      font-size: clamp(1.6rem, 3vw, 2.2rem);
+      color: #141414;
       margin-bottom: 16px;
       line-height: 1.2;
+      font-weight: normal;
     }
     .thankyou-sub {
-      font-size: 1.05rem;
-      color: var(--gray);
-      line-height: 1.8;
-      margin-bottom: 32px;
+      font-size: 0.97rem;
+      color: #4a4a4a;
+      line-height: 1.85;
+      margin-bottom: 40px;
+      padding-bottom: 40px;
+      border-bottom: 1px solid #ddd5c5;
     }
-    .thankyou-steps {
-      text-align: left;
-      background: var(--off-white);
-      border-radius: 8px;
-      padding: 28px 28px;
-      margin-bottom: 32px;
-    }
+    .thankyou-steps { margin-bottom: 36px; }
     .thankyou-steps h3 {
-      font-family: var(--font-serif);
-      font-size: 1.1rem;
-      color: var(--navy);
-      margin-bottom: 16px;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: #909090;
+      margin-bottom: 20px;
     }
     .step-item {
       display: flex;
-      gap: 14px;
+      gap: 20px;
       align-items: flex-start;
-      margin-bottom: 14px;
+      padding: 16px 0;
+      border-bottom: 1px solid #ddd5c5;
     }
-    .step-item:last-child { margin-bottom: 0; }
+    .step-item:first-of-type { border-top: 1px solid #ddd5c5; }
     .step-num {
       flex-shrink: 0;
-      width: 28px; height: 28px;
-      background: var(--gold);
-      color: var(--navy);
-      border-radius: 50%;
-      font-weight: 700;
-      font-size: 0.85rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      font-family: 'Georgia', serif;
+      font-size: 1.4rem;
+      color: #ddd5c5;
+      font-weight: normal;
+      line-height: 1.3;
+      width: 32px;
     }
-    .step-text { font-size: 0.93rem; color: #374151; line-height: 1.7; }
-    .step-text strong { color: var(--navy); }
+    .step-text { font-size: 0.9rem; color: #4a4a4a; line-height: 1.75; padding-top: 2px; }
+    .step-text strong { color: #141414; }
     .btn-back {
       display: inline-block;
-      padding: 13px 32px;
-      background: var(--navy);
-      color: var(--white);
+      padding: 13px 28px;
+      border: 1px solid #141414;
+      color: #141414;
       text-decoration: none;
-      border-radius: 6px;
-      font-weight: 600;
-      font-size: 0.95rem;
-      transition: background 0.2s;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      transition: background 0.2s, color 0.2s;
     }
-    .btn-back:hover { background: var(--navy-light); }
+    .btn-back:hover { background: #141414; color: #fff; }
     .thankyou-disclaimer {
-      font-size: 0.78rem;
-      color: #9ca3af;
+      font-size: 0.72rem;
+      color: #aaa;
       margin-top: 20px;
-      line-height: 1.6;
+      line-height: 1.65;
+    }
+    @media (max-width: 600px) {
+      .thankyou-card { padding: 40px 24px; }
     }
   </style>
 </head>
 <body>
 
-  <!-- TOP BAR -->
-  <header class="top-bar">
-    <div class="container top-bar__inner">
-      <img src="assets/images/sjf-logo.jpg" alt="SJF Law Group" class="top-bar__logo-img" />
-      <div class="top-bar__tagline">Estate &amp; Trust Attorneys</div>
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="header-logo">
+      <img src="assets/images/sjf-logo.jpg" alt="SJF Law Group" />
     </div>
   </header>
 
   <div class="thankyou-page">
     <main class="thankyou-main">
       <div class="thankyou-card">
-        <div class="thankyou-icon"><svg xmlns="http://www.w3.org/2000/svg" width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="#0f1e3d" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+        <div class="thankyou-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+        </div>
+        <div class="thankyou-eyebrow">Consultation Requested</div>
         <h1 class="thankyou-headline">You're All Set — We'll Be in Touch Shortly</h1>
         <p class="thankyou-sub">
-          Thank you for requesting your complimentary trustee consultation. A member of the SJF Law Group team will reach out within <strong>1 business day</strong> to schedule your call.
+          Thank you for reaching out to SJF Law Group. A member of our team will contact you within <strong>1 business day</strong> to schedule your complimentary trustee consultation.
         </p>
 
         <div class="thankyou-steps">
           <h3>What Happens Next</h3>
           <div class="step-item">
-            <div class="step-num">1</div>
-            <div class="step-text"><strong>Watch your phone and email.</strong> Our team will contact you within 1 business day to confirm your consultation appointment.</div>
+            <div class="step-num">01</div>
+            <p class="step-text"><strong>Watch your phone and email.</strong> Our team will contact you within 1 business day to confirm your consultation time.</p>
           </div>
           <div class="step-item">
-            <div class="step-num">2</div>
-            <div class="step-text"><strong>Prepare for your call.</strong> Think about the trust you manage, any concerns you have about distributions or beneficiaries, and any questions for your attorney.</div>
+            <div class="step-num">02</div>
+            <p class="step-text"><strong>Prepare for your call.</strong> Think about the trust you manage, any concerns around distributions or beneficiaries, and the questions you'd like answered.</p>
           </div>
           <div class="step-item">
-            <div class="step-num">3</div>
-            <div class="step-text"><strong>Your free 30-minute consultation.</strong> An estate attorney will review your situation, identify your key risks, and walk you through how Trust Advisory Services can protect you.</div>
+            <div class="step-num">03</div>
+            <p class="step-text"><strong>Your free 30-minute consultation.</strong> An estate attorney will review your situation, identify your key risks, and explain how Trust Advisory Services can protect you going forward.</p>
           </div>
         </div>
 
-        <a href="index.html" class="btn-back">&larr; Back to Home</a>
+        <a href="index.html" class="btn-back">&larr; Return to Home</a>
         <p class="thankyou-disclaimer">This confirmation does not create an attorney–client relationship. SJF Law Group will reach out to schedule your consultation at a mutually convenient time.</p>
       </div>
     </main>
 
-    <!-- FOOTER -->
     <footer class="footer">
-      <div class="container footer__inner">
-        <img src="assets/images/sjf-logo.jpg" alt="SJF Law Group" class="footer__logo-img" />
+      <div class="footer__inner">
+        <div class="footer__logo">
+          <img src="assets/images/sjf-logo.jpg" alt="SJF Law Group" />
+        </div>
         <nav class="footer__links">
           <a href="#">Privacy Policy</a>
           <a href="#">Terms of Use</a>
