@@ -64,15 +64,15 @@ img { max-width: 100%; height: auto; }
   background: var(--white);
   display: grid;
   grid-template-columns: 1fr 1fr;
-  min-height: 86vh;
+  min-height: auto;
   align-items: center;
   border-bottom: 1px solid var(--border);
 }
 .hero__left {
-  padding: 80px 56px 80px 80px;
+  padding: 48px 56px 48px 80px;
   border-right: 1px solid var(--border);
 }
-.hero__right { padding: 80px 80px 80px 56px; background: var(--off-white); }
+.hero__right { padding: 48px 80px 48px 56px; background: var(--off-white); }
 
 .eyebrow {
   font-size: 0.7rem;
