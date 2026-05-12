@@ -408,7 +408,8 @@ img { max-width: 100%; height: auto; }
   font-size: 1rem;
   color: var(--navy);
   line-height: 1.75;
-  margin-bottom: 14px;
+  margin-top: 28px;
+  margin-bottom: 28px;
   font-weight: 500;
 }
 .cta-body {
