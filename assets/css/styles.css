@@ -205,13 +205,10 @@ img { max-width: 100%; height: auto; }
 /* ===== PAIN SECTION ===== */
 .pain-section { background: var(--white); padding: 96px 0; }
 .pain-section__header {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 80px;
-  align-items: end;
   margin-bottom: 56px;
   padding-bottom: 48px;
   border-bottom: 1px solid var(--border);
+  padding-left: 108px;
 }
 .pain-section__intro {
   font-size: 0.97rem;
