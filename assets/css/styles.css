@@ -69,10 +69,10 @@ img { max-width: 100%; height: auto; }
   border-bottom: 1px solid var(--border);
 }
 .hero__left {
-  padding: 64px 56px 64px 80px;
+  padding: 72px 56px 72px 80px;
   border-right: 1px solid var(--border);
 }
-.hero__right { padding: 64px 80px 64px 56px; background: var(--off-white); }
+.hero__right { padding: 72px 80px 72px 56px; background: var(--off-white); }
 
 .eyebrow {
   font-size: 0.7rem;
