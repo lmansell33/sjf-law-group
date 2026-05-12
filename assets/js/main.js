@@ -63,9 +63,9 @@ document.addEventListener('DOMContentLoaded', () => {
 document.addEventListener('DOMContentLoaded', () => {
   document.querySelectorAll('.faq-question').forEach(btn => {
     btn.addEventListener('click', () => {
-      const item = btn.closest('.faq-item');
+      const item = btn.closest('.faq-card');
       const isOpen = item.classList.contains('is-open');
-      document.querySelectorAll('.faq-item.is-open').forEach(el => {
+      document.querySelectorAll('.faq-card.is-open').forEach(el => {
         el.classList.remove('is-open');
         el.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
       });
