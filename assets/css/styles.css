@@ -108,15 +108,6 @@ img { max-width: 100%; height: auto; }
   font-size: 1rem;
   color: var(--text-mid);
   line-height: 1.85;
-  margin-bottom: 16px;
-  max-width: 440px;
-}
-
-.hero__sub2 {
-  font-size: 0.95rem;
-  color: var(--blue);
-  font-style: italic;
-  line-height: 1.7;
   margin-bottom: 44px;
   max-width: 440px;
 }
