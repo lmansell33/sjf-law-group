@@ -354,7 +354,7 @@ img { max-width: 100%; height: auto; }
 }
 .tier-card__level { font-size: 0.68rem; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: var(--blue); margin-bottom: 20px; }
 .tier-card__title { font-family: var(--font-serif); font-size: 1.6rem; color: var(--navy); font-weight: normal; margin-bottom: 8px; }
-.tier-card__for { font-size: 0.83rem; color: var(--text-mid); margin-bottom: 36px; padding-bottom: 36px; border-bottom: 1px solid var(--border); line-height: 1.6; }
+.tier-card__for { font-size: 0.83rem; color: var(--text-mid); margin-bottom: 36px; padding-bottom: 36px; border-bottom: 1px solid var(--border); line-height: 1.6; min-height: 5rem; display: flex; align-items: flex-start; }
 .tier-card__features { list-style: none; margin-bottom: 40px; flex: 1; }
 .tier-card__features li {
   font-size: 0.88rem;
@@ -364,6 +364,8 @@ img { max-width: 100%; height: auto; }
   display: flex;
   gap: 14px;
   line-height: 1.5;
+  min-height: 48px;
+  align-items: center;
 }
 .tier-card__features li::before { content: '—'; color: var(--blue); flex-shrink: 0; }
 .tier-card .btn-primary { background: var(--blue); color: var(--white); text-align: center; display: block; text-decoration: none; }
