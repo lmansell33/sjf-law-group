@@ -441,14 +441,14 @@ img { max-width: 100%; height: auto; }
   display: inline-flex;
   align-items: center;
   gap: 9px;
-  background: var(--white);
-  border: 1px solid var(--border);
-  padding: 9px 16px;
+  background: transparent;
+  border: none;
+  padding: 0;
   font-size: 0.75rem;
   color: var(--text-mid);
   line-height: 1.4;
 }
-.qualify-badge svg { color: var(--blue); flex-shrink: 0; }
+.qualify-badge svg { color: #c49a3c; flex-shrink: 0; }
 
 /* Right form column */
 .cta-form-col { position: sticky; top: 88px; }
@@ -457,7 +457,7 @@ img { max-width: 100%; height: auto; }
   border-top: 3px solid var(--blue-light);
   border: 1px solid rgba(255,255,255,0.06);
   border-top: 3px solid var(--blue-light);
-  padding: 44px 40px 36px;
+  padding: 56px 40px 40px;
   box-shadow: 0 16px 64px rgba(13,30,56,0.22);
 }
 .form-card__title {
@@ -465,14 +465,14 @@ img { max-width: 100%; height: auto; }
   font-size: 1.45rem;
   color: var(--white);
   font-weight: normal;
-  margin-bottom: 5px;
+  margin-bottom: 10px;
 }
 .form-card__sub {
   font-size: 0.81rem;
   color: rgba(255,255,255,0.45);
   line-height: 1.55;
-  margin-bottom: 28px;
-  padding-bottom: 24px;
+  margin-bottom: 36px;
+  padding-bottom: 32px;
   border-bottom: 1px solid rgba(255,255,255,0.08);
 }
 .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
@@ -490,17 +490,17 @@ img { max-width: 100%; height: auto; }
 .form-group input {
   width: 100%;
   padding: 11px 13px;
-  border: 1px solid rgba(255,255,255,0.12);
-  background: rgba(255,255,255,0.06);
+  border: 1px solid var(--border);
+  background: var(--white);
   font-size: 0.92rem;
   font-family: var(--font-sans);
-  color: var(--white);
+  color: var(--navy);
   border-radius: 0;
   -webkit-appearance: none;
-  transition: border-color 0.2s, background 0.2s;
+  transition: border-color 0.2s;
 }
-.form-group input:focus { outline: none; border-color: var(--blue-light); background: rgba(255,255,255,0.1); }
-.form-group input::placeholder { color: rgba(255,255,255,0.25); }
+.form-group input:focus { outline: none; border-color: var(--blue-light); }
+.form-group input::placeholder { color: transparent; }
 .btn-submit {
   width: 100%;
   padding: 15px;
