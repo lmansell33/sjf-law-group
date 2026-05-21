@@ -759,13 +759,13 @@ img { max-width: 100%; height: auto; }
   .pain-item__number { font-size: 2rem; }
   .stats-bar__inner { grid-template-columns: 1fr; }
 
-  /* Global minimum: 20px on every side */
-  .container { padding: 0 20px; }
-  .site-header { padding: 0 20px; }
-  .footer { padding: 36px 20px; }
-  .hero__left { padding: 48px 20px; }
-  .hero__right { padding: 32px 20px 48px; }
-  .stat-item { padding: 40px 20px; }
+  /* Explicit phone padding — ~10% above pre-minimum values */
+  .container { padding: 0 32px; }
+  .site-header { padding: 0 32px; }
+  .footer { padding: 36px 32px; }
+  .hero__left { padding: 48px 36px; }
+  .hero__right { padding: 32px 36px 48px; }
+  .stat-item { padding: 40px 24px; }
 
   /* Hero headline — bigger on phone */
   .hero__headline { font-size: 2.8rem; line-height: 1.1; }
