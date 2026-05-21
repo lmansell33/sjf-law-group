@@ -222,7 +222,7 @@ img { max-width: 100%; height: auto; }
   grid-template-columns: 72px 1fr;
   gap: 16px;
   align-items: start;
-  padding: 24px 48px 40px 0;
+  padding: 32px 48px 32px 0;
   border-bottom: 1px solid var(--border);
 }
 .pain-item:first-child { border-top: 1px solid var(--border); }
@@ -772,7 +772,6 @@ img { max-width: 100%; height: auto; }
 
   /* Pain header — add left indent back on phone */
   .pain-section__header { padding-left: 20px; }
-  .pain-item:first-child { padding-top: 14px; }
 
   /* Benefits — more left/right padding */
   .benefits-inner { padding: 0 16px; }
