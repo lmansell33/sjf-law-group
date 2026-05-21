@@ -772,6 +772,7 @@ img { max-width: 100%; height: auto; }
 
   /* Pain header — add left indent back on phone */
   .pain-section__header { padding-left: 20px; }
+  .pain-item { padding-top: 14px; }
 
   /* Benefits — more left/right padding */
   .benefits-inner { padding: 0 16px; }
