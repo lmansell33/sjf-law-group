@@ -203,12 +203,13 @@ img { max-width: 100%; height: auto; }
 }
 
 /* ===== PAIN SECTION ===== */
-.pain-section { background: var(--white); padding: 96px 0; }
+.pain-section { background: var(--white); padding: 48px 0 96px; }
 .pain-section__header {
   margin-bottom: 56px;
   padding-bottom: 48px;
   border-bottom: 1px solid var(--border);
-  padding-left: 108px;
+  padding-left: 88px;
+  padding-right: 48px;
 }
 .pain-section__intro {
   font-size: 0.97rem;
@@ -219,9 +220,9 @@ img { max-width: 100%; height: auto; }
 .pain-item {
   display: grid;
   grid-template-columns: 72px 1fr;
-  gap: 36px;
+  gap: 16px;
   align-items: start;
-  padding: 40px 0;
+  padding: 40px 48px 40px 0;
   border-bottom: 1px solid var(--border);
 }
 .pain-item:first-child { border-top: 1px solid var(--border); }
@@ -733,8 +734,8 @@ img { max-width: 100%; height: auto; }
   .hero { grid-template-columns: 1fr; min-height: auto; }
   .hero__left { padding: 56px 32px; border-right: none; border-bottom: 1px solid var(--border); }
   .hero__right { padding: 40px 32px 56px; }
-  .pain-section { padding: 60px 0 96px; }
-  .pain-section__header { text-align: left; padding-left: 0; margin-bottom: 40px; }
+  .pain-section { padding: 40px 0 72px; }
+  .pain-section__header { text-align: left; padding-left: 0; padding-right: 0; margin-bottom: 40px; }
   .benefits-inner { grid-template-columns: 1fr; gap: 48px; }
   .benefits-left { position: static; }
   .tiers-header { grid-template-columns: 1fr; gap: 20px; }
