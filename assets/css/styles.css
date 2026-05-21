@@ -260,7 +260,7 @@ img { max-width: 100%; height: auto; }
 .benefits-left { position: sticky; top: 96px; }
 .benefits-left .section-headline {
   font-family: var(--font-serif);
-  font-size: clamp(1.7rem, 2.5vw, 2.4rem);
+  font-size: clamp(2.1rem, 3.5vw, 3.1rem);
   font-weight: normal;
   line-height: 1.2;
   color: var(--navy);
@@ -317,7 +317,7 @@ img { max-width: 100%; height: auto; }
 .tiers-header .eyebrow::before { background: var(--blue-light); }
 .tiers-header .section-headline {
   font-family: var(--font-serif);
-  font-size: clamp(1.7rem, 2.5vw, 2.4rem);
+  font-size: clamp(2.1rem, 3.5vw, 3.1rem);
   color: var(--white);
   font-weight: normal;
   line-height: 1.2;
@@ -391,7 +391,7 @@ img { max-width: 100%; height: auto; }
 /* ===== TESTIMONIALS ===== */
 .proof-section { background: var(--white); padding: 96px 0; border-top: 1px solid var(--border); }
 .proof-header { margin-bottom: 56px; padding-bottom: 48px; border-bottom: 1px solid var(--border); }
-.proof-header .section-headline { font-family: var(--font-serif); font-size: clamp(1.7rem, 2.5vw, 2.4rem); font-weight: normal; line-height: 1.2; color: var(--navy); }
+.proof-header .section-headline { font-family: var(--font-serif); font-size: clamp(2.1rem, 3.5vw, 3.1rem); font-weight: normal; line-height: 1.2; color: var(--navy); }
 .proof-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--border); }
 .testimonial-card { background: var(--white); padding: 44px 40px; }
 .testimonial-card__open-quote { font-family: var(--font-serif); font-size: 3.5rem; color: var(--blue); line-height: 0.8; margin-bottom: 20px; display: block; opacity: 0.4; }
@@ -417,7 +417,7 @@ img { max-width: 100%; height: auto; }
 .cta-content { padding-top: 4px; }
 .cta-headline {
   font-family: var(--font-serif);
-  font-size: clamp(1.9rem, 2.8vw, 2.7rem);
+  font-size: clamp(2.1rem, 3.5vw, 3.1rem);
   color: var(--navy);
   font-weight: normal;
   line-height: 1.18;
@@ -567,7 +567,7 @@ img { max-width: 100%; height: auto; }
 }
 .who-headline {
   font-family: 'Georgia', serif;
-  font-size: clamp(2.2rem, 4vw, 3.2rem);
+  font-size: clamp(2.1rem, 3.5vw, 3.1rem);
   font-weight: normal;
   color: var(--navy);
   line-height: 1.15;
@@ -627,7 +627,7 @@ img { max-width: 100%; height: auto; }
 }
 .faq-headline {
   font-family: 'Georgia', serif;
-  font-size: clamp(2.2rem, 4vw, 3.2rem);
+  font-size: clamp(2.1rem, 3.5vw, 3.1rem);
   font-weight: normal;
   color: var(--navy);
   line-height: 1.15;
@@ -701,7 +701,7 @@ img { max-width: 100%; height: auto; }
 .mini-cta__inner { max-width: 680px; margin: 0 auto; text-align: center; }
 .mini-cta__headline {
   font-family: var(--font-serif);
-  font-size: clamp(1.5rem, 2.5vw, 2.1rem);
+  font-size: clamp(2.1rem, 3.5vw, 3.1rem);
   color: var(--white);
   font-weight: normal;
   line-height: 1.25;
@@ -734,7 +734,7 @@ img { max-width: 100%; height: auto; }
   .hero__left { padding: 56px 32px; border-right: none; border-bottom: 1px solid var(--border); }
   .hero__right { padding: 40px 32px 56px; }
   .pain-section { padding: 60px 0 96px; }
-  .pain-section__header { text-align: right; padding-left: 0; margin-bottom: 40px; }
+  .pain-section__header { text-align: left; padding-left: 0; margin-bottom: 40px; }
   .benefits-inner { grid-template-columns: 1fr; gap: 48px; }
   .benefits-left { position: static; }
   .tiers-header { grid-template-columns: 1fr; gap: 20px; }
