@@ -205,7 +205,7 @@ img { max-width: 100%; height: auto; }
 /* ===== PAIN SECTION ===== */
 .pain-section { background: var(--white); padding: 48px 0 96px; }
 .pain-section__header {
-  margin-bottom: 56px;
+  margin-bottom: 0;
   padding-bottom: 48px;
   border-bottom: 1px solid var(--border);
   padding-left: 88px;
@@ -225,7 +225,7 @@ img { max-width: 100%; height: auto; }
   padding: 32px 48px 32px 0;
   border-bottom: 1px solid var(--border);
 }
-.pain-item:first-child { border-top: 1px solid var(--border); }
+.pain-item:first-child { border-top: none; }
 .pain-item__number {
   font-family: var(--font-serif);
   font-size: 2.8rem;
@@ -735,7 +735,7 @@ img { max-width: 100%; height: auto; }
   .hero__left { padding: 56px 32px; border-right: none; border-bottom: 1px solid var(--border); }
   .hero__right { padding: 40px 32px 56px; }
   .pain-section { padding: 40px 0 72px; }
-  .pain-section__header { text-align: left; padding-left: 0; padding-right: 0; margin-bottom: 40px; }
+  .pain-section__header { text-align: left; padding-left: 0; padding-right: 0; margin-bottom: 0; }
   .benefits-inner { grid-template-columns: 1fr; gap: 48px; }
   .benefits-left { position: static; }
   .tiers-header { grid-template-columns: 1fr; gap: 20px; }
