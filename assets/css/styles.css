@@ -733,7 +733,8 @@ img { max-width: 100%; height: auto; }
   .hero { grid-template-columns: 1fr; min-height: auto; }
   .hero__left { padding: 56px 32px; border-right: none; border-bottom: 1px solid var(--border); }
   .hero__right { padding: 40px 32px 56px; }
-  .pain-section__header { grid-template-columns: 1fr; gap: 20px; }
+  .pain-section { padding: 60px 0 96px; }
+  .pain-section__header { text-align: right; padding-left: 0; margin-bottom: 40px; }
   .benefits-inner { grid-template-columns: 1fr; gap: 48px; }
   .benefits-left { position: static; }
   .tiers-header { grid-template-columns: 1fr; gap: 20px; }
@@ -756,4 +757,5 @@ img { max-width: 100%; height: auto; }
   .pain-item { grid-template-columns: 48px 1fr; gap: 20px; }
   .pain-item__number { font-size: 2rem; }
   .stat-item { padding: 24px 20px; }
+  .stats-bar__inner { grid-template-columns: 1fr; }
 }
