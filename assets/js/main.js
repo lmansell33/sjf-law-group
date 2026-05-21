@@ -1,5 +1,5 @@
-/* ===== CONFIG — paste your GHL webhook URL here ===== */
-const GHL_WEBHOOK_URL = 'YOUR_GHL_WEBHOOK_URL_HERE';
+/* ===== CONFIG ===== */
+const LAWMATICS_FORM_URL = 'https://api.lawmatics.com/v1/forms/321b05ef-a688-4d70-9526-60372f6ec402/submit';
 
 /* ===== FORM HANDLER ===== */
 document.addEventListener('DOMContentLoaded', () => {
@@ -13,16 +13,14 @@ document.addEventListener('DOMContentLoaded', () => {
     const errBox = form.querySelector('.form-error');
 
     const payload = {
-      firstName: form.firstName.value.trim(),
-      lastName:  form.lastName.value.trim(),
-      phone:     form.phone.value.trim(),
-      email:     form.email.value.trim(),
-      source:    'SJF Law Group – Trust Advisory Landing Page',
-      tags:      ['trust-advisory', 'landing-page-lead'],
+      first_name: form.first_name.value.trim(),
+      last_name:  form.last_name.value.trim(),
+      phone:      form.phone.value.trim(),
+      email:      form.email.value.trim(),
     };
 
     /* Basic validation */
-    if (!payload.firstName || !payload.lastName || !payload.phone || !payload.email) {
+    if (!payload.first_name || !payload.last_name || !payload.phone || !payload.email) {
       showError(errBox, 'Please fill in all required fields.');
       return;
     }
@@ -39,17 +37,11 @@ document.addEventListener('DOMContentLoaded', () => {
     setLoading(btn, true);
 
     try {
-      if (!GHL_WEBHOOK_URL || GHL_WEBHOOK_URL === 'YOUR_GHL_WEBHOOK_URL_HERE') {
-        /* Dev mode: log payload and redirect anyway */
-        console.log('[DEV] GHL payload:', payload);
-        await fakeDelay(800);
-      } else {
-        await fetch(GHL_WEBHOOK_URL, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(payload),
-        });
-      }
+      await fetch(LAWMATICS_FORM_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams(payload).toString(),
+      });
       window.location.href = 'thank-you.html';
     } catch (err) {
       console.error('Submission error:', err);
@@ -101,8 +93,4 @@ function isValidEmail(email) {
 
 function isValidPhone(phone) {
   return /^[\d\s\-().+]{7,}$/.test(phone);
-}
-
-function fakeDelay(ms) {
-  return new Promise(resolve => setTimeout(resolve, ms));
 }
