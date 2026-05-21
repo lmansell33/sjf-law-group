@@ -757,6 +757,24 @@ img { max-width: 100%; height: auto; }
   .form-row { grid-template-columns: 1fr; }
   .pain-item { grid-template-columns: 48px 1fr; gap: 20px; }
   .pain-item__number { font-size: 2rem; }
-  .stat-item { padding: 24px 20px; }
   .stats-bar__inner { grid-template-columns: 1fr; }
+
+  /* Hero headline — bigger on phone */
+  .hero__headline { font-size: 2.8rem; line-height: 1.1; }
+
+  /* Stats bar — more top/bottom breathing room */
+  .stat-item { padding: 40px 20px; }
+
+  /* Pain header — add left indent back on phone */
+  .pain-section__header { padding-left: 20px; }
+
+  /* Benefits — more left/right padding */
+  .benefits-inner { padding: 0 16px; }
+
+  /* Who This Is For — reduce top padding, more left padding */
+  .who-section { padding: 48px 0 72px; }
+  .who-section .container { padding-left: 44px; }
+
+  /* Tiers (dark blue section) — more left/right padding */
+  .tiers-section .container { padding: 0 44px; }
 }
