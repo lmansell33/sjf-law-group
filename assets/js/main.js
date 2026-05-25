@@ -36,6 +36,40 @@ document.addEventListener('DOMContentLoaded', () => {
     hideError(errBox);
     setLoading(btn, true);
 
+    /* Shared event ID so the browser Pixel and server-side CAPI events dedupe */
+    const eventId = (window.crypto && crypto.randomUUID)
+      ? crypto.randomUUID()
+      : 'lead-' + Date.now() + '-' + Math.random().toString(36).slice(2);
+
+    /* Browser-side Meta Pixel Lead event (with advanced matching) */
+    if (window.fbq) {
+      fbq('init', '765142088381799', {
+        em: payload.email,
+        ph: payload.phone,
+        fn: payload.first_name,
+        ln: payload.last_name,
+      });
+      fbq('track', 'Lead', {}, { eventID: eventId });
+    }
+
+    /* Server-side Conversions API event (fire-and-forget, survives redirect) */
+    try {
+      fetch('/api/fb-conversion', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        keepalive: true,
+        body: JSON.stringify({
+          ...payload,
+          event_id: eventId,
+          fbp: getCookie('_fbp'),
+          fbc: getCookie('_fbc'),
+          event_source_url: window.location.href,
+        }),
+      });
+    } catch (err) {
+      console.error('CAPI error:', err);
+    }
+
     try {
       await fetch(LAWMATICS_FORM_URL, {
         method: 'POST',
@@ -93,4 +127,9 @@ function isValidEmail(email) {
 
 function isValidPhone(phone) {
   return /^[\d\s\-().+]{7,}$/.test(phone);
+}
+
+function getCookie(name) {
+  const match = document.cookie.match(new RegExp('(^|; )' + name + '=([^;]*)'));
+  return match ? decodeURIComponent(match[2]) : undefined;
 }
