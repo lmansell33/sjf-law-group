@@ -432,6 +432,20 @@
                 <label for="email">Email Address <span>*</span></label>
                 <input type="email" id="email" name="email" autocomplete="email" required />
               </div>
+              <div class="form-group">
+                <label for="role">So we can best prepare for your call — what best describes you? <span>*</span></label>
+                <select id="role" name="role" required class="placeholder-selected">
+                  <option value="" disabled selected>Select your role...</option>
+                  <option value="current_trustee">I am currently serving as a trustee</option>
+                  <option value="future_trustee">I expect to become a trustee soon</option>
+                  <option value="beneficiary">I am a beneficiary of a trust</option>
+                  <option value="exploring">I'm exploring options / not sure</option>
+                </select>
+              </div>
+              <div class="form-consent">
+                <input type="checkbox" id="consent" name="consent" required />
+                <label for="consent">By submitting this form I agree to the <a href="privacy-policy.html" target="_blank">Privacy Policy</a> and <a href="terms-of-use.html" target="_blank">Terms of Use</a> and consent to be contacted by phone, text, or email regarding my inquiry.</label>
+              </div>
               <button type="submit" class="btn-submit">Schedule My Consultation &rarr;</button>
             </form>
 

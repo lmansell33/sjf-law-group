@@ -17,6 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
       last_name:  form.last_name.value.trim(),
       phone:      form.phone.value.trim(),
       email:      form.email.value.trim(),
+      role:       form.role.value,
     };
 
     /* Basic validation */
@@ -30,6 +31,14 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     if (!isValidPhone(payload.phone)) {
       showError(errBox, 'Please enter a valid phone number.');
+      return;
+    }
+    if (!payload.role) {
+      showError(errBox, 'Please select your current role.');
+      return;
+    }
+    if (!form.consent.checked) {
+      showError(errBox, 'Please agree to the terms to continue.');
       return;
     }
 
@@ -83,6 +92,14 @@ document.addEventListener('DOMContentLoaded', () => {
       window.location.href = 'thank-you.html';
     }
   });
+
+  /* Remove placeholder styling once a real option is selected */
+  const roleSelect = form.querySelector('#role');
+  if (roleSelect) {
+    roleSelect.addEventListener('change', () => {
+      roleSelect.classList.toggle('placeholder-selected', !roleSelect.value);
+    });
+  }
 });
 
 /* ===== FAQ ACCORDION ===== */
