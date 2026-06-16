@@ -134,7 +134,7 @@ function setLoading(btn, loading) {
     btn.innerHTML = '<span class="spinner"></span> Submitting…';
   } else {
     btn.disabled = false;
-    btn.innerHTML = 'Schedule My Consultation &rarr;';
+    btn.innerHTML = 'Request My Consultation &rarr;';
   }
 }
 
