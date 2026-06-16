@@ -58,21 +58,22 @@ img { max-width: 100%; height: auto; }
   transition: background 0.2s, color 0.2s;
 }
 .header-cta:hover { background: var(--navy); border-color: var(--navy); color: var(--white); }
-.header-actions { display: flex; align-items: center; gap: 24px; }
-.header-phone {
+.header-actions { display: flex; align-items: center; gap: 14px; }
+.header-call-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--text-mid);
+  white-space: nowrap;
+}
+.header-cta--phone {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  color: var(--navy);
-  font-size: 0.92rem;
-  font-weight: 700;
-  text-decoration: none;
-  letter-spacing: 0.2px;
-  white-space: nowrap;
-  transition: color 0.2s;
+  letter-spacing: 1px;
 }
-.header-phone svg { color: var(--blue); flex-shrink: 0; }
-.header-phone:hover { color: var(--blue); }
+.header-cta--phone svg { flex-shrink: 0; }
 
 /* Hero support line */
 .hero__call {
@@ -888,6 +889,9 @@ img { max-width: 100%; height: auto; }
 }
 @media (max-width: 520px) {
   .form-row { grid-template-columns: 1fr; }
+  /* keep header compact on phones — the number button alone is enough */
+  .header-call-label { display: none; }
+  .header-cta--phone { padding: 9px 16px; }
   .pain-item { grid-template-columns: 48px 1fr; gap: 20px; }
   .pain-item__number { font-size: 2rem; }
   .stats-bar__inner { grid-template-columns: 1fr; }
