@@ -58,6 +58,36 @@ img { max-width: 100%; height: auto; }
   transition: background 0.2s, color 0.2s;
 }
 .header-cta:hover { background: var(--navy); border-color: var(--navy); color: var(--white); }
+.header-actions { display: flex; align-items: center; gap: 24px; }
+.header-phone {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--navy);
+  font-size: 0.92rem;
+  font-weight: 700;
+  text-decoration: none;
+  letter-spacing: 0.2px;
+  white-space: nowrap;
+  transition: color 0.2s;
+}
+.header-phone svg { color: var(--blue); flex-shrink: 0; }
+.header-phone:hover { color: var(--blue); }
+
+/* Hero support line */
+.hero__call {
+  margin-top: 18px;
+  font-size: 0.86rem;
+  color: var(--text-light);
+  letter-spacing: 0.2px;
+}
+.hero__call a {
+  color: var(--blue);
+  font-weight: 600;
+  text-decoration: none;
+  white-space: nowrap;
+}
+.hero__call a:hover { text-decoration: underline; }
 
 /* ===== HERO ===== */
 .hero {
@@ -758,6 +788,66 @@ img { max-width: 100%; height: auto; }
   margin-bottom: 36px;
 }
 .mini-cta__btn { display: inline-block; }
+.mini-cta__call {
+  margin-top: 22px;
+  font-size: 0.9rem;
+  color: rgba(255,255,255,0.55);
+  letter-spacing: 0.2px;
+}
+.mini-cta__call a {
+  color: var(--blue-light);
+  font-weight: 600;
+  text-decoration: none;
+  white-space: nowrap;
+}
+.mini-cta__call a:hover { text-decoration: underline; }
+
+/* ===== MOBILE STICKY CTA BAR ===== */
+.mobile-cta-bar { display: none; }
+@media (max-width: 600px) {
+  .mobile-cta-bar {
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 200;
+    background: var(--white);
+    border-top: 1px solid var(--border);
+    box-shadow: 0 -2px 16px rgba(13,30,56,0.12);
+    padding: 10px;
+    gap: 10px;
+    /* respect iOS home-indicator safe area */
+    padding-bottom: calc(10px + env(safe-area-inset-bottom));
+  }
+  .mobile-cta-bar__btn {
+    flex: 1;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 14px 8px;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: background 0.2s, color 0.2s;
+  }
+  .mobile-cta-bar__btn--call {
+    background: var(--white);
+    color: var(--navy);
+    border: 1px solid var(--navy);
+  }
+  .mobile-cta-bar__btn--call svg { flex-shrink: 0; }
+  .mobile-cta-bar__btn--book {
+    background: var(--blue);
+    color: var(--white);
+    border: 1px solid var(--blue);
+  }
+  /* keep the sticky bar from covering footer content */
+  body { padding-bottom: 72px; }
+}
 
 /* ===== FOOTER ===== */
 .footer { background: var(--navy); padding: 40px 48px; border-top: 3px solid var(--blue); }
@@ -795,6 +885,10 @@ img { max-width: 100%; height: auto; }
   .container { padding: 0 28px; }
   .site-header { padding: 0 28px; }
   .footer { padding: 36px 28px; }
+  /* keep header uncluttered on small screens — calling stays available via the
+     hero support line and the mobile sticky bar */
+  .header-phone { display: none; }
+  .header-cta { padding: 10px 18px; letter-spacing: 1.2px; }
 }
 @media (max-width: 520px) {
   .form-row { grid-template-columns: 1fr; }

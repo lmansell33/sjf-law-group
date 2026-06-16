@@ -1,6 +1,26 @@
 /* ===== CONFIG ===== */
 const LAWMATICS_FORM_URL = 'https://api.lawmatics.com/v1/forms/321b05ef-a688-4d70-9526-60372f6ec402/submit';
 
+/* Single source of truth for the firm phone number.
+   Update these two values to change the number everywhere on the page.
+   - display: what visitors see, e.g. (954) 289-5355
+   - tel:     dialer link, digits only with country code, e.g. +19542895355 */
+const PHONE = {
+  display: '(954) 289-5355',
+  tel: '+19542895355',
+};
+
+/* Sync every phone link/label from the PHONE config.
+   HTML carries the same values as a no-JS fallback; this keeps them in sync. */
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('[data-phone-link]').forEach(a => {
+    a.setAttribute('href', 'tel:' + PHONE.tel);
+  });
+  document.querySelectorAll('[data-phone-text]').forEach(el => {
+    el.textContent = PHONE.display;
+  });
+});
+
 /* ===== FORM HANDLER ===== */
 document.addEventListener('DOMContentLoaded', () => {
   const form = document.getElementById('consult-form');
