@@ -885,10 +885,6 @@ img { max-width: 100%; height: auto; }
   .container { padding: 0 28px; }
   .site-header { padding: 0 28px; }
   .footer { padding: 36px 28px; }
-  /* keep header uncluttered on small screens — calling stays available via the
-     hero support line and the mobile sticky bar */
-  .header-phone { display: none; }
-  .header-cta { padding: 10px 18px; letter-spacing: 1.2px; }
 }
 @media (max-width: 520px) {
   .form-row { grid-template-columns: 1fr; }
