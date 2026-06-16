@@ -28,6 +28,11 @@ module.exports = async (req, res) => {
   const body = req.body || {};
   const { first_name, last_name, phone, email, event_id, fbp, fbc, event_source_url } = body;
 
+  /* Allowlist the event name so this endpoint can serve both the form Lead
+     and the phone-click Contact event. Defaults to Lead for backward compat. */
+  const ALLOWED_EVENTS = new Set(['Lead', 'Contact']);
+  const event_name = ALLOWED_EVENTS.has(body.event_name) ? body.event_name : 'Lead';
+
   const ip = (req.headers['x-forwarded-for'] || '').split(',')[0].trim() ||
     (req.socket && req.socket.remoteAddress) || undefined;
   const ua = req.headers['user-agent'] || undefined;
@@ -45,7 +50,7 @@ module.exports = async (req, res) => {
 
   const payload = {
     data: [{
-      event_name: 'Lead',
+      event_name: event_name,
       event_time: Math.floor(Date.now() / 1000),
       event_id: event_id || crypto.randomUUID(),
       event_source_url: event_source_url,

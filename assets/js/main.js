@@ -19,6 +19,40 @@ document.addEventListener('DOMContentLoaded', () => {
   document.querySelectorAll('[data-phone-text]').forEach(el => {
     el.textContent = PHONE.display;
   });
+
+  /* Track phone-link clicks as a Meta "Contact" event — kept separate from the
+     form "Lead" event so campaign optimization stays focused on form submits.
+     This counts call intent (a tap), not a completed conversation. */
+  document.querySelectorAll('[data-phone-link]').forEach(a => {
+    a.addEventListener('click', () => {
+      const eventId = (window.crypto && crypto.randomUUID)
+        ? crypto.randomUUID()
+        : 'call-' + Date.now() + '-' + Math.random().toString(36).slice(2);
+
+      /* Browser-side Pixel Contact event */
+      if (window.fbq) {
+        fbq('track', 'Contact', {}, { eventID: eventId });
+      }
+
+      /* Server-side Conversions API mirror (deduped via shared event_id) */
+      try {
+        fetch('/api/fb-conversion', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          keepalive: true,
+          body: JSON.stringify({
+            event_name: 'Contact',
+            event_id: eventId,
+            fbp: getCookie('_fbp'),
+            fbc: getCookie('_fbc'),
+            event_source_url: window.location.href,
+          }),
+        });
+      } catch (err) {
+        console.error('Call CAPI error:', err);
+      }
+    });
+  });
 });
 
 /* ===== FORM HANDLER ===== */
